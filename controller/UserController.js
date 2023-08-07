@@ -105,7 +105,7 @@ const loginWithFacebookAndGoogle = asyncHandler( async (req, res)=>{
     const user = req.user
     
     generateToken(res, user._id)
-   res.redirect('http://localhost:3000/mainpage')
+   res.redirect('https://radiant-frangipane-073e2d.netlify.app/mainpage')
 })
 
 const logoutFacebookAndgoogle = asyncHandler( async(req, res)=>{
@@ -144,7 +144,7 @@ const forgetPassword = asyncHandler(async (req, res) => {
         expiresIn: "10m",
       });
   
-      const link = `http://localhost:5000/users/reset-password/${userId}/${token}`;
+      const link = `http://ec2-3-84-162-115.compute-1.amazonaws.com/users/reset-password/${userId}/${token}`;
 
       
       const Token = 100000 + Math.floor(Math.random() * 900000)
@@ -224,7 +224,7 @@ const resetPassword = asyncHandler( async (req, res)=>{
     const secret = process.env.JWT_SECRET + user.password;
     const verify =  jwt.verify(token,secret);
     if(verify){
-   res.redirect( `http://localhost:3000/reset-password/:${id}`)
+   res.redirect( `https://radiant-frangipane-073e2d.netlify.app/reset-password/:${id}`)
     }
   } catch (error) {
     res.status(400)
