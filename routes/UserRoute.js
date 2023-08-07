@@ -26,19 +26,19 @@ router.get('/search/dayofweek', authMiddleware, searchTodoInDay)
 router.delete('/:itemId', authMiddleware, deleteTodo)
 router.delete('/clear/:dayOfWeek', authMiddleware, clearTodo)
 
-router.get('/auth/google', cors({ origin: 'http://localhost:3000' }),
+router.get('/auth/google', cors({ origin: 'https://todoapp-frontend-iryf.onrender.com' }),
   passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-  router.get('/auth/google/callback', cors({ origin: 'http://localhost:3000' }),
+  router.get('/auth/google/callback', cors({ origin: 'https://todoapp-frontend-iryf.onrender.com' }),
 passport.authenticate('google'),
 loginWithFacebookAndGoogle
 )
 
 
-router.get('/auth/facebook',  cors({ origin: 'http://localhost:3000' }),
+router.get('/auth/facebook',  cors({ origin: 'https://todoapp-frontend-iryf.onrender.com' }),
   passport.authenticate('facebook',  { scope: ['profile', 'email'] }));
 
-router.get('/auth/facebook/callback',  cors({ origin: 'http://localhost:3000' }),
+router.get('/auth/facebook/callback',  cors({ origin: 'https://todoapp-frontend-iryf.onrender.com' }),
   passport.authenticate('facebook'),
   loginWithFacebookAndGoogle
   );
