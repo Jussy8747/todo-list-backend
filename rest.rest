@@ -1,4 +1,6 @@
-post 'http://ec2-3-84-162-115.compute-1.amazonaws.com/users/signin'
-{
-email
-}
+GET https://ec2-3-84-162-115.compute-1.amazonaws.com
+
+
+
+###
+GET https://todoappbackend-jz46.onrender.com
